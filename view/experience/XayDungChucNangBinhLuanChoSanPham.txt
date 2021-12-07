@@ -1,0 +1,32 @@
+1. Cấu trúc của bình luận:
+    - Các cách để tham gia bình luận vào website:
+        + Bình luận với tài khoản đã đăng kí ở website
+        + Bình luận với tài khoản facebook
+        + Bình luận với tài khoản Gmail
+    - Cách thức kết nối của người dùng và sản phẩm chứa bình luận:
+        + Mỗi khách hàng có thể bình luận cho nhiều sản phẩm, và binh luận nhiều lần cho 1 sản phẩm
+        + Mỗi 1 sản phẩm sẽ được bình luận bới nhiều khách hàng
+    - Các thông tin bình luận:
+        + Ngày bình luận
+        + Nội dung
+        + Trạng thái: ẩn, hiển bình luận
+        + Thuộc tính của bình luận: admin xem xét bình luận có hợp lệ hay không, ngôn từ có phù hợp hay không
+    - Thực thể nhận bình luận: sản phẩm
+2. Xây dựng chức năng bình luận cho sản phẩm: Khi người dùng đã đăng nhập tài khoản
+    - Nội dung: 
+        + Sau khi người dùng đăng nhập thành công có thể tham gia bình luận sản phẩm
+        + Sau khi người dùng bình luận xong và nhấn nút "Đăng lên" thì bình luận đó sẽ được thêm vào table "comments"
+        + Admin tiến hành kiểm duyệt bình luận đó, kiểm tra xem bình luận có đạt các yêu cầu cơ bản hay không 
+        Nếu bình luận đó không đạt các yêu cầu cơ bản thì admin sẽ không cho hiện bình luận đó lên website 
+        Nếu bình luận đó đạt các tiêu chuẩn cần thiết cho 1 bình luận thì admin sẽ cho hiện bình luận đó lên website 
+    
+3. Xây dựng chức năng bình luận cho sản phẩm: Khi người dùng chưa đăng nhập tài khoản
+    - Đầu tiên: + Thông báo cho người dùng đăng nhập tài khoản mới được tham gia binh luận sản phẩm 
+                + Chuyển hướng đến trang đăng nhập cho người dùng
+                Hoặc
+                    Có 1 đường link để người chuyển hướng đến trang đăng nhập 
+
+4. Hiển thị các bình luận của sản phẩm: 
+    - Hướng đi: 
+        + Để lấy comments đúng với từng sản phẩm khác nhau, ta cần lấy kèm theo id product    
+                 

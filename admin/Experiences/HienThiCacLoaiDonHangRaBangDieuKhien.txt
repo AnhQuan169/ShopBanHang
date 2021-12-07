@@ -1,0 +1,31 @@
+1. Quy trình xử lí đơn hàng:
+    - Sau khi khách hàng chọn sản phẩm cần mua, điền đầy đủ thông tin, ấn nút "Đặt hàng"
+        --> Đơn hàng sẽ ở trạng thái "Chưa xử lí"
+    - Hệ thống sẽ nhận được đơn hàng của khách hàng, admin sẽ kiểm duyệt đơn hàng đó
+        --> Đơn hàng sẽ ở trạng thái "Đang xử lí"
+    - Cửa hàng giao hàng cho khách hàng, sau khi khách hàng nhận được đầy đủ hàng và nhân viên giao hàng nhận được tiền sản phẩm
+        --> Đơn hàng sẽ ở trạng thái "Đã xử lí"
+    - Các trường hợp đơn hàng sẽ ở trạng thái "Huỷ"
+        + Sau khi đơn hàng được khách hàng đặt thành công, đơn hàng vẫn trong tình trạng "Đang xử lí",
+        khách hàng không muốn mua sản phẩm đó nữa, khách hàng "huỷ" đơn hàng
+        + Sau khi đơn hàng được giao, khách hàng nhận được hàng hoá không đạt yêu cầu, có lỗi, của 
+        hàng liên hệ khách hàng, nếu khách hàng không muốn đổi trả mà muốn huỷ đơn hàng
+        + Khi đơn hàng có có dấu hiệu bị "boom", nhân viên giao hàng liên hệ cửa hàng, tiến hành "Huỷ" đơn hàng
+
+2. Thống kê từng loại đơn hàng của đơn hàng 
+    - Cú pháp:
+        <?php
+            $chuaxuli=mysqli_num_rows($connect->query("select * from orders where status=1"));
+            $dangxuli=mysqli_num_rows($connect->query("select * from orders where status=2"));
+            $daxuli=mysqli_num_rows($connect->query("select * from orders where status=3"));
+            $huy=mysqli_num_rows($connect->query("select * from orders where status=4"));
+        ?>
+    - Thực hiện: Thực hiên truy vấn đêm sô lượng hàng trong table Đơn hàng
+    kèm theo điều kiện truy vấn "trạng thái đơn hàng"
+        + Đang xử lí
+        + Đã xử lí
+        + Chưa xử lí
+        + Huỷ
+    - Callback: Gọi lại kết quả truy vấn
+        + Cú pháp:
+            <?=$chuaxuli?>

@@ -1,0 +1,17 @@
+1. Bắt đầu 1 session:
+    session_start();
+2. Loại bỏ session. Tiến hành đăng xuất
+    unset($_SESSION['admin]);
+3. Kiếm tra có tồn tại dữ liệu hay không?
+    - Kiếm tra option chứa giá trị_
+    isset($_GET['option'])
+4. Dùng "switch case" để thực hiện các câu lệnh tuỳ thuộc vào mỗi option khác nhau
+    switch($_GET['option']){
+        case 'logout':
+            ...
+            break;
+    }
+5. Rút gọn đường link sau khi thực hiện hành động, không nhìn thấy sự phức tạp của link đường dẫn
+    header("Location: .");
+6. Điều hướng các trang khác 
+    include "loginadmin.php";

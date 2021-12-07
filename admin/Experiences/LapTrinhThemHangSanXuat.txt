@@ -1,0 +1,18 @@
+1. Lấy ra các bản ghi đã tồn tại trong database trùng với dữ liệu nhập mới vào
+    -Cụ thể: Kiểm tra "tên hãng sản xuất"
+        $query="select * from brands where name='$name'";
+
+2. Kiểm tra dữ liệu nhập vào đã tồn tại trong database hay chưa ?
+
+3. Hàm này có chức năng đếm số bản ghi 
+    Cú pháp: mysqli_num_rows($connect->query($query))
+        - Trường hợp cụ thể:
+            Nếu sô bản ghi có name trong database trùng với name nhập mới vào khác 0 hoặc lớn hơn 0 
+            if(mysqli_num_rows($connect->query($query))!=0){
+                //Phát ra 1 thông báo cho người dùng là nó đã tồn tại trong database
+                $alert="Đã tồn tại tên hãng sản xuất này!";
+            }
+4. Tiếp nhận $alert phát ra và truyền nó lên, thông báo cho người dùng
+    - Cụ thể: 
+        <?php isset($alert)?$alert:""?>
+        //Ý nghĩa câu lệnh: Nếu tồn tại $alert thì phát ra thông báo, nếu không tồn tại thì nó sẽ không thực hiện gì cả, trả về rỗng

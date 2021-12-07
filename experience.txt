@@ -1,0 +1,10 @@
+1. Truyền 1 trang khác vào body của trang home 
+- Sử dụng ' include "" ' 
+2. Tạo 1 đối tượng "mysqli" : kết nối database vào trang web
+Ví dụ: new mysqli('localhost','root','','mobile_shop');
+    + localhost : tên của host 
+    + root : tên đăng nhập của host, mặc định là root 
+    + "" : Mật khẩu mặc định là rỗng
+    + mobileshop : tên database sử dụng 
+3. Hàm "query()": truy vấn, xem, thêm, sửa, xoá
+ 

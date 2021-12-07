@@ -1,0 +1,15 @@
+1. Gọi dữ liệu từ trên database xuống
+    - Cụ thể là từ table brands 
+        $query="select * from brands";
+2. Mở 1 trang mới: khi tiến hành chọn vào 1 nút bấm, 1 option sẽ được triển khai,
+thông qua switch_case trong admincontrolpanel.php, mở ra các trang tương ứng với option
+    Cụ thể: Mở trang tiến hành thêm 1 hãng sản xuất mới
+        <a href="?option=brandadd"></a>
+3. Chạy qua các mảng phần tử;
+    - Dùng: foreach():
+            .....
+            endforeach;
+    - Cụ thể: Lấy danh sách hãng sản xuất ra 
+        foreach($result as $item):
+            <a><?=$item['name']?></a>
+        endforeach;
